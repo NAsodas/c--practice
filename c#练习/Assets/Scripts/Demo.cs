@@ -7,22 +7,29 @@ public class Demo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<string> list = new List<string>();
-        list.Add("Hello");
-        list.Add("World");
-        list.Add("!");
+ 
+    }
+    void Update()
+    {
+        Debug.Log("001");
+        StartCoroutine(Test());
+        Debug.Log("003");
 
-
-        //for(int i = 0; i < list.Count; i++)
-        //{
-        //    Debug.Log(list[i]);
-        //}
-
-        foreach(string item in list)
-        {
-            Debug.Log(item);
-        }
     }
 
+     IEnumerator Test()
+    {
+        Debug.Log("002");
+        yield return null;
+        Debug.Log("004");
+    }
+
+    void LateUpdate()
+    {
+       
+        
+        Debug.Log("005");
+
+    }
 
 }
